@@ -7,6 +7,7 @@ This is a new email template that I am developing and testing for internal purpo
   <li><a href="#preview-text">Preview Text</a></li>
   <li><a href="#styling">Styling</a></li>
   <li><a href="#padding-and-margin">Padding and Margin</a></li>
+  <li><a href="#table-spacing">Table Spacing</a></li>
   <li><a href="#a-tag-attributes">a Tag Attributes</a></li>
   <li><a href="#images">Images</a></li>
 </ol>
@@ -49,6 +50,26 @@ Outlook does not respect styles on a div tag. They are removed when rendered so 
 For consistency, I have styled tables only with a width and <td> tags with the padding. This allows the template to appear the same in outlook and gmail without adding too many different styles to account for each client. Both clients will render this solution the same way. I also opted to use width rather than margin as a personal preference and have kept that consistent throughout the template. 
 
 ![image](https://github.com/user-attachments/assets/8af4b61a-d2ff-4a54-b8fd-e34979e0362b)
+
+<h2>Table Spacing</h2>
+I have found that the simplest way to create 0 spacing between table cells and rows is to reset all padding and margins:
+  
+  
+  <b>div, table, tbody, tr, td, img {
+      margin: 0;
+      padding: 0;
+      border: 0;
+  }
+  table {
+      border-spacing: 0;
+  }</b>
+
+Then include <b>line-height: 0px;</b> on your table tag. 
+
+![image](https://github.com/user-attachments/assets/0cfb66cd-2234-4f0a-8e7a-f08117dc73b2)
+
+I struggled to remove the extra space under my table for quite some time and tried setting cellpadding="0", cellspacing="0", border-collapse: "collapse", but the only thing that seemed to solve my problem was setting the line height. Without this, I was getting an extra 4px of space at the bottom of each row on my table. 
+
 
 <h2>a Tag Attributes</h2>
 A tags require a few additional attributes for email than for web. 
