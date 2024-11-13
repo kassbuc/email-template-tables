@@ -101,3 +101,44 @@ Outlook will by default display images at their actual size rather than respect 
 
 This is beneficial to solve pixelation issues or if you have an image that should stretch across the entire mobile display (up to 480px) but only a portion of the page in full width display (say 300px). In this case you want to size your image to the max pixels it will occupy so you dont get blurry images at its max width, but you will need to limit the image width by using table dimensions when it occupies a smaller area. 
 
+<h2>Gradient for Outlook</h2>
+
+While a gradient background is quite simple for the gmail rendering engine, it requires VML for outlook. 
+
+For gmail, all you need to do is add a style to the element you want to add the gradient background to. For my example I added this style to my table element:
+
+![image](https://github.com/user-attachments/assets/aa2d0e36-44e9-42e5-b6ad-c99115b99c7c)
+
+For outlook it is more complicated. For one, the outlook app for mobile uses a different rendering engine than the desktop version which does not support VML. I have not found a good or simple solution for this and instead add a solid fall-back color for mobile outlook users. To do this, I added a class called gradient to my table which defaults to a solid background when the screen size is smaller than 480px. I did this with media queries because outlook will default to this option in desktop if you use inline styling on your tables.
+
+To add a gradient background compatible with Outlook (using VML), you'll need to wrap your existing structure with a VML rect element that defines the gradient.
+
+![image](https://github.com/user-attachments/assets/565072e2-c9ee-4dc9-bc19-aad0c70c1c90)
+
+You can copy and paste this to wrap your element:
+
+&lt;!--[if gte mso 9]&gt;
+
+&lt;v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px; height:445px"&gt;
+
+&lt;v:fill type="gradient" color="#00344C" color2="#0D7079" angle="0" /&gt;
+
+&lt;v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0"&gt;
+
+&lt;div&lt;![endif]--&gt;
+
+[ YOUR CODE HERE ]
+
+&lt;!--[if gte mso 9]&gt;&lt;/div&gt;&lt;/v:textbox&gt;&lt;/v:rect&gt;&lt;![endif]--&gt;
+
+
+<h3>What Does the VML Mean?</h3>
+<ul>
+	<li>&lt;v:rect&gt; defines a rectangle with specified dimensions.</li>
+		<li>style controls the width and height.</li>
+		<li>fillcolor sets the background color, and strokecolor/strokeweight set the border color and width.</li>
+		<li>&lt;v:fill&gt; allows for additional properties like gradients.</li>
+		<li>&lt;v:textbox&gt; places text inside the shape.</li>
+</ul>
+
+<i>It should be noted that outlook does not save space for the rect element and will render the rest of the email content underneath this area unless a heigh is specified in the styles on the rect element. In my case, my table takes up 600px X 445px so I have specified exactly those dimensions. You will have to play around with these dimensions a bit.</i> 
