@@ -75,7 +75,7 @@ I struggled to remove the extra space under my table for quite some time and tri
 A tags require a few additional attributes for email than for web. 
 All my a tags have these attributes: href, name, target, and xt.
 
-&lt;a href="https://google.com/" name="link name" target="_blank" xt="SPCLICKSTREAM"&gt;Link 1&lt;/a&gt
+&lt;a href="https://google.com/" name="link name" target="_blank" xt="SPCLICKSTREAM"&gt;Link 1&lt;/a&gt;
 
 Name attribute is used to identify the link in your email service provider. The provider will associate clicks to this name. 
 
@@ -94,3 +94,10 @@ Email clients each have their own default link styles. Outlook has a blue underl
 style="color:#0d7079; font-weight: normal; text-decoration: underline;"
 
 <h2>Images</h2>
+
+Outlook will by default display images at their actual size rather than respect the image size styles. In order to fix that, we can limit the table size and set the image and table max-width:XXXpx as I have done here:
+
+![image](https://github.com/user-attachments/assets/9b55c671-cee4-4645-a774-b5755e648670)
+
+This is beneficial to solve pixelation issues or if you have an image that should stretch across the entire mobile display (up to 480px) but only a portion of the page in full width display (say 300px). In this case you want to size your image to the max pixels it will occupy so you dont get blurry images at its max width, but you will need to limit the image width by using table dimensions when it occupies a smaller area. 
+
