@@ -32,15 +32,16 @@
 
   <!-- Root selects the root element (html) but with higher specificity-->
   <style>
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
     :root {
         color-scheme: light;
         supported-color-schemes: light;
-    }
-
-    html, body {
-        margin: 0 auto !important;
-        padding: 0 !important;
-        width: 100% !important;
     }
 
     .wrapper {
@@ -48,20 +49,10 @@
         background-color: #f2f2f2;
     }
 
-    div, table, tbody, tr, td, img {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        box-sizing: border-box;
-    }
-
-    table {
-        border-spacing: 0;
-    }
-
-    a {
-        text-decoration: none;
-    }
+    html, body { margin: 0 auto !important; padding: 0 !important; width: 100% !important; }
+    table { border-spacing: 0; }
+    img a { border: 0; text-decoration: none; border-collapse: collapse;}
+    img { display: block; border: 0;}
 
     .stack-view {
         display: inline-block;
@@ -99,8 +90,8 @@
 <body class="body" xml:lang="en-GB">
 
     <!-- PREHEADER -->
-    <div style="display:none !important; max-height: 0; visibility:hidden; mso-hide:all; color:#ffffff; opacity:0; overflow:hidden;">Preheader text here</div>
-    <div style="display:none !important; max-height: 0; visibility:hidden; mso-hide:all; color:#ffffff; opacity:0; overflow:hidden;">͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ &zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏</div>
+    <div style="display:none !important; max-height: 0; visibility:hidden; color:#ffffff; opacity:0; overflow:hidden;">Preheader text here</div>
+    <div style="display:none !important; max-height: 0; visibility:hidden; color:#ffffff; opacity:0; overflow:hidden;">͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ ͏ &zwnj; &nbsp;   ﻿ ͏ &zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏&zwnj; &nbsp;   ﻿ ͏</div>
     <!-- END PREHEADER -->
 
     <div class="wrapper" style="background-color:#f2f2f2;">
@@ -118,7 +109,7 @@
                         <tr>
                             <td align="left" style="width: 180px;"><a href="https://www.google.com/" name="logo 1 name for tracking" target="_blank" xt="SPCLICKSTREAM"><img style="width:180px; max-width:180px;" width="180" max-width="180px" alt="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAAjCAYAAAA9riDJAAAAAXNSR0IArs4c6QAABWNJREFUeF7tmuVuIzEURp0yMzOpoL7/W/RvQVWZmRlXx9KNXIdbZyeauZai3SYe23N9/PnznUktLS19Gy0agZhEIKVAx2Qm9TZsBBRoBSFWEVCgYzWdejMKtDIQqwgo0LGaTr0ZBVoZiFUEFOhYTafeTCKAHhgYMIODg+bq6srs7u5mzHpPT4/p7+839fX1JpVKma+vL/Pw8GCOjo7M4+Pjj/rNzc1maGjItLS0mKqqqrx1y4EXY+3r6zMNDQ3psd7f35vj4+OMsY6MjNi63JNfPj8/zf7+vrm8vCzHMCNrM/ZAt7e3m7GxMVNXV2cuLi4ygO7t7TXDw8MWzufnZ/P6+mqAlvr8vbW1ZV5eXuwEAdHU1JRpbGy03/E7/+d7v245ZtQfK2NoamrK2T9j7ezsNG9vbwaA3cKiZRHc3t6WY6iRtRlroDs6OgwqhfJSsgG9sLBgoUC9t7e3M8A9Pz83e3t79vuJiQnT3d1tUMTNzU0LSXV1tZmenjatra3GrRt6RulndnbWLiDGurOzY7uQ77kHv/+5uTl7b4B7cnISekgV2V4sgWaSsQXAh/ICXk1NTQbQ2IbJyUkLhb/9jo+PG7Z34F1fX7cqCLgo9+HhoTk7O0tPKNs6Ko8SArooesgZb2trszsN94NtcpXVHyv9ssug0NRnQV5fX4ccTsW2FUugAXl0dNROJh4RhUZBfYUGZFQMWFEwPLOUmZkZg10BBGwHWzdAfX9/W3W8u7tL16VtFgZeNRc89EGbjAUYNzY20tej/F1dXXZB8H2pC8IfKw3LeLEWjN8/C1QskX8cWCyBBg4OeWzBQMxWnQ1oYgekKPHHx4fdmtnOUVsWBfAeHBzYNlwVXltb++FJWRjz8/NWvfNt79IG/YrKiy+W7xhzsQUV5j6xVnLIY/wUOQi/v7/bg6scIql3c3NjdyTfVxfbbyXXiyXQfsDzAU1dAAY2FF0Kagl0AggWBkg4NC4vL2fM6eLiolVfX+n9inJQ4xCJmrOggM31xcUAw86CZaIApiw8uVZsCH9zLyg0tgtPzQJkh0G54wZ14oEGVFSOwqSjaJI5AASgwyKEAlqsB2qOteCQ95sMCcBicbieD7vJ6elp2jbh97FMnAFccN1MCfVZtHEqiQYaayJem0OeTC4KhnLy+9PTkz0UAn0IhQYesR5yYPXVtVTAuAdAxTb5B8ZsbckuIQfeUvur5PqJBhpoAQFoV1dXf8wT6sZhTQ56bNeSycjnof0MSLbJl4wJ/2JhfnMQdNuVjEZtbW1By8N1hXabSga20NgSDXS2dJcbMHwxkHCA4mAlWQ7y1aiblGKyHG67ZERQf2wCC8bNgReasFy/Z/PwpPqwNVgnt8gTRH5bWVn5bZcVeV2igZaJxcNiK9wDEjCg0JLHRcVD5KHdrAYZDf6moOz5MhzYHT7YCl/RZUFhlWiHswC2IpdiZ0vzVSSdvxhUooHGVqDSgOB6aOIouWEX9lxPCgGEjEOhJ4Xuo3NRZVHrQgdD11b4h7lsbQi0frvugvqrd/8Fb2W/JNFAE11J2bH1M/nu+xGoIQ9bRDn/+i6HgOf6ZveBSyHrUcpY3XdY3LQdC0Nsjjw+Lztl/7GDxANNrNnKebhCKk3etgNuYHafCFIXILAqpPZKedtOlJH2/Ycv8hAET13IepAh4VPsWHnLEEvCWGmftCQLNK7vdiQC6P8oENpVxBFQoCOeAO0+bAQU6LDx1NYijoACHfEEaPdhI6BAh42nthZxBBToiCdAuw8bAQU6bDy1tYgjoEBHPAHafdgIKNBh46mtRRwBBTriCdDuw0ZAgQ4bT20t4ggo0BFPgHYfNgL/ACvzP+nYz7kPAAAAAElFTkSuQmCC" /> </a></td>
                             <td align="center" style="width: 40px;"><a href="https://www.google.com/" name="logo 2 name for tracking" target="_blank" xt="SPCLICKSTREAM"><img style="width:40px; max-width:40px;" width="40" max-width="40px" alt="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAjCAYAAADmOUiuAAAAAXNSR0IArs4c6QAAAYlJREFUWEftkuuKwlAMhKdWVBRBQaQoVqqC7/8ePoKK+kO8YOuFqnjbZQL6b83CQViWHCi0TJLO+SbeYDD4wh8+nhl0TMcIOgKEETSCrgRc+20HjaArAdf+/7GDvu+j0+ngcrlguVyi3W4jk8nI92Qywf1+/xFUr9dDNpsVnb1BEMDzPFyvV8znc6Rp+hbyrwg2Gg2Uy2Ucj0cZXCqVxBh/vl6vEccxms2mmL7dbsjlcphOp+DFarUadrsdWq2W9ObzeRwOh9ejrYBqsFKpyE9Op5MYIK1isYjhcIhut4vtdovNZoNCofAiSzI09Tyso77f78UgqVWrVSHI/ndHNRiGoQzjeTweMpwRjUYj9Pv9F0HSohHGOR6PcT6fxRR7kyRBvV4XczS+Wq2klrMWi4WbwWc3Y6YJxsm4SPJplO+8CKNljDTJC7A+iiKp4ztXhOvBGqYxm83kIk4EtR35tK5G/GkD2nwzqBHSdCOoEdJ0I6gR0nQjqBHSdCOoEdJ0I6gR0nQjqBHS9G8omxi8SerJ0AAAAABJRU5ErkJggg==" /></a></td>
-                            <td align="left" style="width:50px; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px;"><a href="https://www.google.com/" name="connect with our team" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Some contact information</a></td>
+                            <td align="left" style="width:50px; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px;"><a href="https://www.google.com/" name="connect with our team" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Some contact information</a></td>
                         </tr>
                     </table>
                     <table align="center" style="width:80%;">
@@ -128,9 +119,9 @@
                     </table>
                     <table align="center" style="width:80%;">
                         <tr>
-                            <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px; padding-top: 20px;"><a href="https://www.google.com/" name="Link 1 name" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Link 1</a></td>
-                            <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px; padding-top: 20px;"><a href="https://www.google.com/" name="Link 2 name" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Link 2</a></td>
-                            <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px; padding-top: 20px;"><a href="https://www.google.com/" name="Link 3 name" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Link 3</a></td>
+                            <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px; padding-top: 20px;"><a href="https://www.google.com/" name="Link 1 name" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Link 1</a></td>
+                            <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px; padding-top: 20px;"><a href="https://www.google.com/" name="Link 2 name" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Link 2</a></td>
+                            <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px; padding-top: 20px;"><a href="https://www.google.com/" name="Link 3 name" target="_blank" xt="SPCLICKSTREAM" style="color:#0d7079; font-weight: normal; text-decoration: underline;">Link 3</a></td>
                         </tr>
                     </table>
                     </td></tr>
@@ -156,11 +147,11 @@
                         <table align="center" style="width:73%; line-height: 0;">
                             <!-- Header 1 -->
                             <tr>
-                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; mso-line-height-rule: exactly; line-height:36px; color:#0d7079; font-weight: normal;">Lorem Ipsum</td>
+                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; line-height:36px; color:#0d7079; font-weight: normal;">Lorem Ipsum</td>
                             </tr>
                             <!-- Body copy -->
                             <tr>
-                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:20px; color:#0d7079; padding-top: 10px;">
+                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:20px; color:#0d7079; padding-top: 10px;">
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do
                                     ut labore et dolore magna aliqua. Ut
@@ -179,11 +170,11 @@
                         <table align="center" style="width:73%; line-height: 0;">
                             <!-- Header 1 -->
                             <tr>
-                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; mso-line-height-rule: exactly; line-height:36px; color:#ffffff; font-weight: normal;">Lorem Ipsum</td>
+                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; line-height:36px; color:#ffffff; font-weight: normal;">Lorem Ipsum</td>
                             </tr>
                             <!-- Body copy -->
                             <tr>
-                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:20px; color:#ffffff; padding-top: 10px;">
+                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:20px; color:#ffffff; padding-top: 10px;">
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do
                                     ut labore et dolore magna aliqua. Ut
@@ -212,11 +203,11 @@
                             <table align="center" style="width:90%; line-height: 0;" class="mobile-center" cellspacing="0" cellpadding="0"> 
                                 <!-- Header 1 -->
                                 <tr>
-                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:23px; mso-line-height-rule: exactly; line-height:30px; color:#0d7079; font-weight: bold; padding-top: 10px;">Lorem Ipsum</td>
+                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:23px; line-height:30px; color:#0d7079; font-weight: bold; padding-top: 10px;">Lorem Ipsum</td>
                                 </tr>
                                 <!-- Body copy -->
                                 <tr>
-                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:23px; color:#0d7079; padding-top: 15px;">
+                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:23px; color:#0d7079; padding-top: 15px;">
                                         Lorem ipsum dolor sit amet, consectetur
                                         adipiscing elit, sed do
                                         ut labore et dolore magna aliqua. Ut
@@ -246,11 +237,11 @@
                             <table align="center" style="width:90%; line-height: 0;" class="mobile-center" cellspacing="0" cellpadding="0"> 
                                 <!-- Header 1 -->
                                 <tr>
-                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:23px; mso-line-height-rule: exactly; line-height:30px; color:#0d7079; font-weight: bold; padding-top: 10px;">Lorem Ipsum</td>
+                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:23px; line-height:30px; color:#0d7079; font-weight: bold; padding-top: 10px;">Lorem Ipsum</td>
                                 </tr>
                                 <!-- Body copy -->
                                 <tr>
-                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:23px; color:#0d7079; padding-top: 15px;">
+                                    <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:23px; color:#0d7079; padding-top: 15px;">
                                         Lorem ipsum dolor sit amet, consectetur
                                         adipiscing elit, sed do
                                         ut labore et dolore magna aliqua. Ut
@@ -301,24 +292,24 @@
                                 <table align="center" style="width:90%; line-height: 0;">
                                     <!-- Offer name -->
                                     <tr>
-                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; mso-line-height-rule: exactly; line-height:35px; color:#00344C; font-weight: normal; padding: 10px">Lorem Ipsum</td>
+                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; line-height:35px; color:#00344C; font-weight: normal; padding: 10px">Lorem Ipsum</td>
                                     </tr>
                                     <!-- offer details -->
                                     <tr>
-                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:20px; color:#0d7079; font-weight: light; padding: 0;">SAVE UP TO</td>
+                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:20px; color:#0d7079; font-weight: light; padding: 0;">SAVE UP TO</td>
                                     </tr>
                                     <tr>
-                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:100px; mso-line-height-rule: exactly; line-height:105px; color:#0d7079; font-weight: light; padding: 0">30%</td>
+                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:100px; line-height:105px; color:#0d7079; font-weight: light; padding: 0">30%</td>
                                     </tr>
                                     <tr>
-                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:20px; color:#0d7079; font-weight: light; padding: 0">ON ACTIVITIES</td>
+                                        <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:20px; color:#0d7079; font-weight: light; padding: 0">ON ACTIVITIES</td>
                                     </tr>
                                     <!-- button yellow -->
                                     <tr>
                                         <td align="center" style="padding: 10px;">
                                             <table align="center" style="width:150px;">
                                                 <tr>
-                                                    <td align="center" style="padding: 7px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:18px; background-color:#ffc400;"><a href="https://www.google.com/" name="cta" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: bold; text-decoration: none;">Lorem Ipsum</a></td>
+                                                    <td align="center" style="padding: 7px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:18px; background-color:#ffc400;"><a href="https://www.google.com/" name="cta" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: bold; text-decoration: none;">Lorem Ipsum</a></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -345,11 +336,11 @@
                         <table align="center" style="width:73%;">
                             <!-- Header 1-->
                             <tr>
-                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; mso-line-height-rule: exactly; line-height:36px; color:#ffffff; font-weight: normal;">Blog Headline</td>
+                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:30px; line-height:36px; color:#ffffff; font-weight: normal;">Blog Headline</td>
                             </tr>
                             <!-- Body copy -->
                             <tr>
-                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:20px; color:#ffffff; padding: 10px 0;">
+                                <td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:20px; color:#ffffff; padding: 10px 0;">
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do
                                     ut labore et dolore magna aliqua. Ut
@@ -361,7 +352,7 @@
                                 <td align="center" style="padding-top: 10px;">
                                     <table align="center" style="width:150px;">
                                         <tr>
-                                            <td align="center" style="padding: 7px 0; border: 1px solid white; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; mso-line-height-rule: exactly; line-height:18px;"><a href="https://whistler.com/" name="blog cta" target="_blank" xt="SPCLICKSTREAM" style="color:#ffffff; font-weight: bold; text-decoration: none;">Read Blog</a></td>
+                                            <td align="center" style="padding: 7px 0; border: 1px solid white; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:16px; line-height:18px;"><a href="https://whistler.com/" name="blog cta" target="_blank" xt="SPCLICKSTREAM" style="color:#ffffff; font-weight: bold; text-decoration: none;">Read Blog</a></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -385,7 +376,7 @@
                         <td align="center" style="padding: 20px 0;">
                         <table align="center" style="width:90%;">
                             <tr>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:25px; mso-line-height-rule: exactly; line-height:27px; color:#0d7079; font-weight: bolder;">Company Slogan or Name</td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:25px; line-height:27px; color:#0d7079; font-weight: bolder;">Company Slogan or Name</td>
                             </tr>
                         </table>
                         <!-- ICONS AND PREFERENCES -->
@@ -394,25 +385,25 @@
                                 <td align="center" style="padding: 10px 5px;">
                                     <table align="center" style="min-width: 60px;">
                                         <tr><td align="center" style="mso-line-height-rule: exactly; line-height:30px;"><a href="tel:+4733378901" name="contact 1" target="_blank" xt="SPCLICKSTREAM"><img style="height: 30px; max-height: 30px;" height="30" max-height="30" alt="contact" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAoCAYAAADpE0oSAAAAAXNSR0IArs4c6QAAAWJJREFUWEftlt2qgkAUhZf5QyRqdFFYVkKS7/8ePkI/dpNRKApRkaaHPaCck3XutItmbhSdtdeab/bACJ7nFfjAELhxW9Q56rZIg6PmqBsjwJurMbTPhb8ctaZpmE6neDweyLIMh8MBlmWh0+ngfr/D9332778xmUyg6zq22y3m8/lb7R/UZNztdpnpcDjE9XqFLMvM0HEcnE4nRFEEKk5haJ6iKNjtdiyLYRgYjUbI8xzn8xmqqta0ZejaHpPYNE0URcGMqfBqtcJisUAcxwjDkIUrV7Pf75EkCURRhG3buFwuzJCevV6vpn1p3O/3mdHxeMRyuaywrtdruK5brZhMKIgkSdhsNrjdbhgMBoyEIAiMBoUmIs/al8a02vF4jDRNmZjQEjraVypIReh9NpuxgDSPzOl7OWi7SBMEQdUvv7VvUbd1kL/8HLeFmXw46tZoc9QcdWMEeHM1hpbfMj/WXD8cNDKwmSg3MAAAAABJRU5ErkJggg==" /></a></td></tr>
-                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; mso-line-height-rule: exactly; line-height:13px; color:#0d7079; font-weight: normal;">Telephone</td></tr>
+                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; line-height:13px; color:#0d7079; font-weight: normal;">Telephone</td></tr>
                                     </table>
                                 </td>
                                 <td align="center" style="padding: 10px 5px;">
                                     <table align="center" style="min-width: 60px;">
                                         <tr><td align="center" style="mso-line-height-rule: exactly; line-height:30px;"><a href="https://www.google.com/" name="contact 2" target="_blank" xt="SPCLICKSTREAM"><img style="height: 30px; max-height: 30px;" height="30" max-height="30" alt="contact" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAoCAYAAADpE0oSAAAAAXNSR0IArs4c6QAAAWJJREFUWEftlt2qgkAUhZf5QyRqdFFYVkKS7/8ePkI/dpNRKApRkaaHPaCck3XutItmbhSdtdeab/bACJ7nFfjAELhxW9Q56rZIg6PmqBsjwJurMbTPhb8ctaZpmE6neDweyLIMh8MBlmWh0+ngfr/D9332778xmUyg6zq22y3m8/lb7R/UZNztdpnpcDjE9XqFLMvM0HEcnE4nRFEEKk5haJ6iKNjtdiyLYRgYjUbI8xzn8xmqqta0ZejaHpPYNE0URcGMqfBqtcJisUAcxwjDkIUrV7Pf75EkCURRhG3buFwuzJCevV6vpn1p3O/3mdHxeMRyuaywrtdruK5brZhMKIgkSdhsNrjdbhgMBoyEIAiMBoUmIs/al8a02vF4jDRNmZjQEjraVypIReh9NpuxgDSPzOl7OWi7SBMEQdUvv7VvUbd1kL/8HLeFmXw46tZoc9QcdWMEeHM1hpbfMj/WXD8cNDKwmSg3MAAAAABJRU5ErkJggg==" /></a></td></tr>
-                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; mso-line-height-rule: exactly; line-height:13px; color:#0d7079; font-weight: normal;">Contact</td></tr>
+                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; line-height:13px; color:#0d7079; font-weight: normal;">Contact</td></tr>
                                     </table>
                                 </td>
                                 <td align="center" style="padding: 10px 5px;">
                                     <table align="center" style="min-width: 60px;">
                                         <tr><td align="center" style="mso-line-height-rule: exactly; line-height:30px;"><a href="https://www.google.com/" name="contact 3" target="_blank" xt="SPCLICKSTREAM"><img style="height: 30px; max-height: 30px;" height="30" max-height="30" alt="contact" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAoCAYAAADpE0oSAAAAAXNSR0IArs4c6QAAAWJJREFUWEftlt2qgkAUhZf5QyRqdFFYVkKS7/8ePkI/dpNRKApRkaaHPaCck3XutItmbhSdtdeab/bACJ7nFfjAELhxW9Q56rZIg6PmqBsjwJurMbTPhb8ctaZpmE6neDweyLIMh8MBlmWh0+ngfr/D9332778xmUyg6zq22y3m8/lb7R/UZNztdpnpcDjE9XqFLMvM0HEcnE4nRFEEKk5haJ6iKNjtdiyLYRgYjUbI8xzn8xmqqta0ZejaHpPYNE0URcGMqfBqtcJisUAcxwjDkIUrV7Pf75EkCURRhG3buFwuzJCevV6vpn1p3O/3mdHxeMRyuaywrtdruK5brZhMKIgkSdhsNrjdbhgMBoyEIAiMBoUmIs/al8a02vF4jDRNmZjQEjraVypIReh9NpuxgDSPzOl7OWi7SBMEQdUvv7VvUbd1kL/8HLeFmXw46tZoc9QcdWMEeHM1hpbfMj/WXD8cNDKwmSg3MAAAAABJRU5ErkJggg==" /></a></td></tr>
-                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; mso-line-height-rule: exactly; line-height:13px; color:#0d7079; font-weight: normal;">Contact</td></tr>
+                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; line-height:13px; color:#0d7079; font-weight: normal;">Contact</td></tr>
                                     </table>
                                 </td>
                                 <td align="center" style="padding: 10px 5px;">
                                     <table align="center" style="min-width: 60px;">
                                         <tr><td align="center" style="mso-line-height-rule: exactly; line-height:30px;"><a href="mailto:someone@example.com" name="contact 4" target="_blank" xt="SPCLICKSTREAM"><img style="height: 30px; max-height: 30px;" height="30" max-height="30" alt="contact" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAoCAYAAADpE0oSAAAAAXNSR0IArs4c6QAAAWJJREFUWEftlt2qgkAUhZf5QyRqdFFYVkKS7/8ePkI/dpNRKApRkaaHPaCck3XutItmbhSdtdeab/bACJ7nFfjAELhxW9Q56rZIg6PmqBsjwJurMbTPhb8ctaZpmE6neDweyLIMh8MBlmWh0+ngfr/D9332778xmUyg6zq22y3m8/lb7R/UZNztdpnpcDjE9XqFLMvM0HEcnE4nRFEEKk5haJ6iKNjtdiyLYRgYjUbI8xzn8xmqqta0ZejaHpPYNE0URcGMqfBqtcJisUAcxwjDkIUrV7Pf75EkCURRhG3buFwuzJCevV6vpn1p3O/3mdHxeMRyuaywrtdruK5brZhMKIgkSdhsNrjdbhgMBoyEIAiMBoUmIs/al8a02vF4jDRNmZjQEjraVypIReh9NpuxgDSPzOl7OWi7SBMEQdUvv7VvUbd1kL/8HLeFmXw46tZoc9QcdWMEeHM1hpbfMj/WXD8cNDKwmSg3MAAAAABJRU5ErkJggg==" /></a></td></tr>
-                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; mso-line-height-rule: exactly; line-height:13px; color:#0d7079; font-weight: normal;">Email</td></tr>
+                                        <tr><td align="center" style="font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:13px; line-height:13px; color:#0d7079; font-weight: normal;">Email</td></tr>
                                     </table>
                                 </td>
                             </tr>
@@ -431,18 +422,18 @@
                         </table>
                         <table align="center" style="width:40%;">
                             <tr>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px;"><a href="https://www.google.com/" name="privacy" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Privacy</a></td>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px; color:#00344C; font-weight: normal;">|</td>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px;"><a href="https://www.google.com/" name="preferences" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Preferences</a></td>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px; color:#00344C; font-weight: normal;">|</td>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px;"><a href="https://www.google.com/" name="contact" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Contact</a></td>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px; color:#00344C; font-weight: normal;">|</td>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; mso-line-height-rule: exactly; line-height:14px;"><a href="https://www.google.com/" name="unsubscribe" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Unsubscribe</a></td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px;"><a href="https://www.google.com/" name="privacy" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Privacy</a></td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px; color:#00344C; font-weight: normal;">|</td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px;"><a href="https://www.google.com/" name="preferences" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Preferences</a></td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px; color:#00344C; font-weight: normal;">|</td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px;"><a href="https://www.google.com/" name="contact" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Contact</a></td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px; color:#00344C; font-weight: normal;">|</td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:12px; line-height:14px;"><a href="https://www.google.com/" name="unsubscribe" target="_blank" xt="SPCLICKSTREAM" style="color:#00344C; font-weight: normal; text-decoration: underline;">Unsubscribe</a></td>
                             </tr>
                         </table>
                         <table align="center" style="width:90%">
                             <tr>
-                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:8px; mso-line-height-rule: exactly; line-height:10px; color:#0d7079; font-weight: normal;">*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ut labore et dolore magna aliqua.</td>
+                                <td align="center" style="padding: 10px 0; font-family: 'Work Sans', 'Trebuchet MS', sans-serif; font-size:8px; line-height:10px; color:#0d7079; font-weight: normal;">*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ut labore et dolore magna aliqua.</td>
                             </tr>
                         </table>
                         </td>
